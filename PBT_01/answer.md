@@ -95,3 +95,112 @@ Không nên dùng table để tạo layout trang web vì:
 - Form đó có: action:`/tim-kiem`, method: `get` (vì không hiện nên mặc định là get)
 - input type được dùng: `type="text"`, `type="submit"`
 
+## Phần C  
+### Câu C1:  
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+</head>
+<body>
+    <!-- Header: Chứa logo, tìm kiếm và điều hướng chính -->
+    <header>
+        <div class="logo">...</div>
+        <nav aria-label="Main Navigation"> <!-- nav vì đây là khu vực điều hướng chính của website -->
+            <ul>
+                <li><a href="#">Danh mục</a></li>
+                <li><a href="#">Khuyến mãi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> <!-- main vì đây là nội dung chính, duy nhất của trang này -->
+        
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb"> <!-- nav để trình đọc màn hình hiểu đây là thanh điều hướng phụ -->
+            <ol> <!-- ol vì breadcrumb là danh sách có thứ tự từ cấp cao xuống thấp -->
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/mobile">Điện thoại</a></li>
+                <li aria-current="page">iPhone 16</li> <!-- aria-current để đánh dấu trang hiện tại -->
+            </ol>
+        </nav>
+
+        <!-- Container chính của sản phẩm -->
+        <section class="product-container"> <!-- section để gom nhóm các thành phần liên quan đến 1 chủ đề -->
+            
+            <!-- Khu vực ảnh sản phẩm -->
+            <aside class="product-gallery"> <!-- aside vì đây là nội dung bổ trợ (hình ảnh) cho phần thông tin chính -->
+                <figure> <!-- figure dùng để chứa ảnh có kèm chú thích hoặc nhóm ảnh liên quan -->
+                    <img src="img1.jpg" alt="iPhone 16 mặt trước">
+                    <!-- ... 4 ảnh còn lại -->
+                    <figcaption>Hình ảnh chi tiết iPhone 16</figcaption> <!-- figcaption để chú thích cho nhóm ảnh -->
+                </figure>
+            </aside>
+
+            <!-- Thông tin sản phẩm -->
+            <article class="product-info"> <!-- article vì đây là nội dung độc lập, có thể mang đi nơi khác vẫn đủ nghĩa -->
+                <h1>Tên sản phẩm iPhone 16</h1> <!-- h1 vì đây là tiêu đề quan trọng nhất của trang -->
+                <p class="price">25.000.000đ</p> <!-- p cho các đoạn văn bản/thông tin ngắn -->
+                <div class="rating"> <!-- div dùng để gom nhóm trang trí (sao) không mang ý nghĩa văn bản -->
+                    <span>4.5/5 sao</span>
+                </div>
+                <section class="description">
+                    <h2>Mô tả sản phẩm</h2> <!-- h2 cho tiêu đề phụ trong bài viết -->
+                    <p>Mô tả tóm tắt về các tính năng nổi bật...</p>
+                </section>
+            </article>
+
+            <!-- Bảng thông số kỹ thuật -->
+            <section class="specifications">
+                <h2>Thông số kỹ thuật</h2>
+                <table> <!-- table vì đây là dữ liệu có cấu trúc hàng và cột -->
+                    <tr>
+                        <th>Màn hình</th> <!-- th cho tiêu đề của hàng/cột -->
+                        <td>OLED 6.1 inch</td> <!-- td cho dữ liệu trong ô -->
+                    </tr>
+                    <tr>
+                        <th>Chip</th>
+                        <td>A18 Bionic</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Khu vực đánh giá/bình luận -->
+            <section id="reviews">
+                <h2>Đánh giá từ khách hàng</h2>
+                <article class="comment"> <!-- Mỗi bình luận là một article độc lập -->
+                    <header>
+                        <strong>Người dùng A</strong> <!-- strong để nhấn mạnh tên người dùng -->
+                        <time datetime="2024-10-20">20/10/2024</time> <!-- time để máy tính hiểu chính xác định dạng thời gian -->
+                    </header>
+                    <p>Sản phẩm rất tốt!</p>
+                </article>
+            </section>
+
+        </section>
+
+        <!-- Sidebar: Sản phẩm tương tự -->
+        <aside class="related-products"> <!-- aside vì đây là nội dung liên quan nhưng nằm ngoài luồng chính của sản phẩm -->
+            <h2>Sản phẩm tương tự</h2>
+            <ul> <!-- ul vì danh sách sản phẩm gợi ý không cần thứ tự ưu tiên -->
+                <li><a href="#">iPhone 15 Pro</a></li>
+                <li><a href="#">Samsung S24</a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer> <!-- footer chứa thông tin cuối trang như bản quyền, liên hệ -->
+        <p>&copy; 2024 Cửa hàng công nghệ. All rights reserved.</p>
+        <address> <!-- address dùng cho thông tin liên hệ của chủ sở hữu -->
+            Địa chỉ: 123 Đường ABC, Hà Nội.
+        </address>
+    </footer>
+    
+</body>
+</html>
+```
