@@ -71,5 +71,27 @@ Không nên dùng table để tạo layout trang web vì:
   - Không thể tối ưu hiển thị trên di động
   - Làm chậm tốc độ tải trang
 
+## Phần B
 
+### Câu 3:  
+-lỗi 1: Dòng 1- Thiếu từ khóa html trong DOCTYPE - Cách sửa: Sửa thành `<!DOCTYPE html>`  
+- Lỗi 2: Dòng 2-Thiếu thuộc tính ngôn ngữ - Cách sửa:thên `<html lang="vi"`
+- Lỗi 3: Dòng 4-Thẻ `<title>` chưa được đóng - Cách sửa:thêm `</title>`
+- Lỗi 4: Dòng 5-Sai giá trị charset - Cách sửa:Sửa thành utf-8
+- Lỗi 5: Dòng 8-Thẻ `<h1>` đóng sai cú pháp - Cách sửa: đổi `<h1>` ở cuối thành`</h1>`
+- Lỗi 6: Dòng 10-Đặt `<header>` bên trong `<body>` sau thẻ`<h1>` - Cách sửa:đưa `<h1>` vào trong `<header>`
+- Lỗi 7: Dòng 12-Thẻ `<a>` đóng sai- Cách sửa: đổi `<a>` thành `</a>`
+- Lỗi 8: Dòng 18-Thuộc tính src thiếu dấu ngoặc kép- Cách sửa: sửa thành `src="iphone.jpg"`
+- Lỗi 9: Dòng 20- Thẻ `<b>` và `<p>` đóng sai thứ tự- Cách sửa: sửa thành `<b>25.990.000đ</b></p>`
+- Lỗi 10: Dòng 25- Dùng thẻ `<td>` cho tiêu đề bảng - Cách sửa: đổi sang thẻ `<th>`
+- Lỗi 11: Dòng 35- Sử dụng 2 thẻ `<main> trên cùng 1 trang - Cách sửa: đổi thẻ `<main>` thứ 2 thành `<aside>`
+- Lỗi 12: Dòng 39- Thẻ `<p>` trong footer chưa đóng- Cách sửa: thêm `</p>`
+
+### Câu 4:  
+2. Trong thẻ element table hiển thị:
+   - Nội dung: bảng thông số kỹ thuật của iPhone
+   - có dùng thẻ `<tbody>` và không dùng thẻ `<thead>`
+3.   
+- Form đó có: action:`/tim-kiem`, method: `get` (vì không hiện nên mặc định là get)
+- input type được dùng: `type="text"`, `type="submit"`
 
