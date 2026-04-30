@@ -204,3 +204,10 @@ Không nên dùng table để tạo layout trang web vì:
 </body>
 </html>
 ```
+### Câu C2:  
+
+Quan điểm "dùng `<div>` cho mọi thứ" là 1 tư duy thiên về hiển thị hình ảnh mà bỏ qua các giá trị cốt lõi của web là dữ liệu và khả năng tiếp cận. Việc sử dụng các thẻ semantic HTML thật sự hữu ích bởi:  
+- Về mặt SEO, các công cụ thìm kiếm như Google dựa vào các thẻ ngữ nghĩa để hiểu cấu trúc nội dung. Thẻ `<main>`, `<article>`,... đóng vai trò như  những nhãn dán chỉ dẫn đâu là nội dung quan trọng nhất. Nếu chỉ dùng `<div>`, Google sẽ mất nhiều thời gian hơn để phân tích, dẫn đến việc xếp hạng trang web không tối ưu.
+- Tính tiếp cận: có những người dùng khiếm thị sử dụng trình đọc màn hình dựa vào các thẻ `<nav>`, `,button>` hay `<header>` để phân biệt các phần của trang. Vậy nên 1 website toàn `<div>` sẽ khiến họ lạc lối vì không có điểm mốc định vị.
+- Ví dụ: khi bạn dùng thẻ `<button>` thay vì `<div class="btn">` trình duyệt sẽ tự cung cấp các tính năng mặc định như cho phép nhấn bằng phím Enter/Space, tự động nhận tiêu điểm khi dùng phím Tab. Nếu dùng `<div>`, bạn phải viết thêm rất nhiều để tái lập lại những hành vi này, điều này sẽ trở nên tốn thời gian
+- Tuy nhiên, `<div>` vẫn là lựa chọn phù hợp nhất trong các trường hợp thuần về dàn trang. Khi bạn cần một lớp bao quanh để tạo các hiệu ứng đồ họa mà lớp đó không mang ý nghĩa nội dung lúc này`<div>` là thẻ an toàn nhất.
