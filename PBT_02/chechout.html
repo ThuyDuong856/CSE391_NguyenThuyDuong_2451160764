@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán đơn hàng - E-Commerce</title>
+</head>
+<body>
+
+    <h1>Thanh toán đơn hàng</h1>
+
+    <!-- Phần 1: Giỏ hàng -->
+    <section>
+        <h2>Giỏ hàng của bạn</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>iPhone 16 Pro Max</td>
+                    <td>30.000.000đ</td>
+                    <td>1</td>
+                    <td>30.000.000đ</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ốp lưng</td>
+                    <td>100.000đ</td>
+                    <td>2</td>
+                    <td>200.000đ</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Củ sạc 20W</td>
+                    <td>500.000đ</td>
+                    <td>1</td>
+                    <td>500.000đ</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: right;">Tổng cộng:</td>
+                    <td>30.700.000đ</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <!-- Phần 2 & 3: Form thanh toán -->
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Phương thức & Ưu đãi</legend>
+            <div class="form-group radio-group">
+                <label>Phương thức thanh toán:</label><br>
+                <input type="radio" id="cod" name="payment" value="cod" required>
+                <label for="cod">COD (Tiền mặt)</label>
+                <input type="radio" id="bank" name="payment" value="bank">
+                <label for="bank">Chuyển khoản</label>
+                <input type="radio" id="e-wallet" name="payment" value="e-wallet">
+                <label for="e-wallet">Ví điện tử</label>
+            </div>
+            <div class="form-group">
+                <label for="voucher">Mã giảm giá:</label>
+                <input type="text" id="voucher" name="voucher" 
+                       pattern="SALE[0-9]{4}" 
+                       placeholder="Ví dụ: SALE2026" 
+                       title="Mã giảm giá phải có định dạng SALE + 4 chữ số">
+            </div>
+            <div class="form-group">
+                <label for="note">Ghi chú đơn hàng:</label>
+                <textarea id="note" name="note" rows="3" placeholder="Yêu cầu đặc biệt về đơn hàng..."></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <div class="form-group">
+                <label for="delivery-date">Ngày giao hàng mong muốn:</label>
+                <!-- min="2026-05-02" để đảm bảo từ ngày mai (so với mốc hiện tại 01/05/2026) -->
+                <input type="date" id="delivery-date" name="delivery-date" min="2026-05-02" required>
+            </div>
+            <div class="form-group">
+                <label for="time-slot">Khung giờ giao:</label>
+                <select id="time-slot" name="time-slot" required>
+                    <option value="">--Chọn khung giờ--</option>
+                    <option value="morning">Sáng 8-12h</option>
+                    <option value="afternoon">Chiều 14-18h</option>
+                    <option value="evening">Tối 18-21h</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="delivery-range">Thời gian giao hàng dự kiến (1-7 ngày):</label>
+                <input type="range" id="delivery-range" name="delivery-range" 
+                       min="1" max="7" step="1" value="3"
+                       oninput="this.nextElementSibling.value = this.value">
+                <output>3</output> ngày
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn-submit" aria-label="Xác nhận đặt hàng">
+            Xác nhận đặt hàng
+        </button>
+    </form>
+
+</body>
+</html>
